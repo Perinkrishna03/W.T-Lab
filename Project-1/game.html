@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+    <script type="text/javascript">
+       let x =  Math.floor(Math.random() * 10);
+       var c = 3;
+       function f()
+       {
+         if (document.forms["myForm"]["nm"].value == "")
+         {
+           alert("Enter a number");
+
+         }
+         else if (document.forms["myForm"]["nm"].value == x)
+         {
+           alert("You won");
+           window.location.reload();
+                   }
+         else
+         {
+           c = c - 1;
+           if (c == 0)
+           {
+             alert("You lost");
+             var d = "answer is " + x;
+             alert(d);
+             window.location.reload();
+           }
+           else {
+             alert("Wrong Guess");
+             document.getElementById("c").innerHTML = c;
+           }
+
+         }
+
+       }
+    </script>
+  </head>
+  <body>
+    <div class="p1">
+      <h1>Welcome to Guessing Game</h1>
+      <h2>Number is between 1 to 10 and You have 3 chances to guess the number</h2>
+      <form class="" action="index.html" method="post" name = "myForm">
+        <table>
+          <tr>
+            <td>Chances Left: </td>
+            <td id = "c">3</td>
+          </tr>
+          <tr>
+            <td>Number</td>
+            <td><input type="text" name="nm" value="" required = "required"></td>
+          </tr>
+          <tr>
+             <td><button type="button" name="button" onclick = "return f()">submit</button></td>
+          </tr>
+
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
